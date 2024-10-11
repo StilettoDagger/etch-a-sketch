@@ -16,4 +16,17 @@ function createCanvas() {
     }
 }
 
+// Change the color of the cells that are hovered on with the mouse
+function createCellHoverEffect() {
+    const cells = document.querySelectorAll(".cell");
+
+    for (const cell of cells) {
+        cell.addEventListener("mouseenter", e => {
+            e.target.style.backgroundColor = "black";
+        })
+    }
+}
+
 createCanvas();
+
+createCellHoverEffect();
