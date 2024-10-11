@@ -8,19 +8,17 @@ html, body {
     height: 100%;
 }
 
+body, #sketch-container, .col {
+    display: flex;
+}
+
 body {
     background-color: #f4f4f4;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#sketch-container {
-    display: flex;
-}
-
-.column {
-    display: flex;
+.col {
     flex-direction: column;
 }
 
