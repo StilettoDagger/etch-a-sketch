@@ -8,10 +8,10 @@ function createCanvas() {
         newColumn.classList.add("col");
         sketchCanvas.appendChild(newColumn);
         for (let j = 0; j < 16; j++) {
-            // For every column, create 16 rows of divs
-            const newRow = document.createElement("div");
-            newRow.classList.add("row");
-            newColumn.appendChild(newRow);
+            // For every column, create 16 cell divs
+            const newCell = document.createElement("div");
+            newCell.classList.add("cell");
+            newColumn.appendChild(newCell);
         }
     }
 }
