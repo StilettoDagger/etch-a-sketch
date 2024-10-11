@@ -22,7 +22,7 @@ function createCellHoverEffect() {
 
     for (const cell of cells) {
         cell.addEventListener("mouseenter", e => {
-            e.target.style.backgroundColor = "black";
+            e.target.classList.add("active");
         })
     }
 }
