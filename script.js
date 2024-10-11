@@ -1,4 +1,4 @@
-const sketchCanvas = document.querySelector("#sketch");
+const sketchCanvas = document.querySelector("#sketch-container");
 
 // Create a 16x16 grid of divs for the canvas
 function createCanvas() {
