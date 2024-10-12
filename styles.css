@@ -188,3 +188,56 @@ button {
 .darkblue {
 	background-color: darkblue;
 }
+
+@media (max-width: 900px) {
+    #sketch-container {
+        width: 600px;
+        height: 600px;
+        order: 3;
+    }
+
+    .buttons {
+        width: 600px;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        order: 1
+    }
+
+    button {
+        width: fit-content;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        width: 100%;
+        position: static;
+        background-color: transparent;
+        order: 2;
+        height: auto;
+        padding: 0;
+    }
+
+    .sidebar-menu > h2 {
+        display: none;
+    }
+
+    .color-menu {
+        width: 100%;;
+    }
+
+    .color-menu > div {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    #sketch-container {
+        width: 90%;
+    }
+}

@@ -48,7 +48,7 @@ function createNewCanvas(e) {
 	let userInput = null;
 	do {
 		userInput = prompt(
-			"Please enter the number of squares per side for your new canvas (<100): ",
+			"Please enter the size of your new canvas (<100): ",
 			"16"
 		);
 
