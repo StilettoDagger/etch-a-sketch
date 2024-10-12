@@ -48,13 +48,26 @@ body {
 	background-color: black;
 }
 
-#new-grid {
-	font-size: 1.3rem;
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+}
+
+button {
+    font-size: 1.3rem;
 	padding: 0.3em 1em;
 	border: none;
 	border-radius: 20px;
-	background-color: rgb(50, 50, 255);
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+#new-grid {
+	background-color: rgb(50, 50, 255);
+}
+
+#clear {
+    background-color: chocolate;
 }
