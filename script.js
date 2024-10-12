@@ -35,11 +35,7 @@ function createCellHoverEffect() {
 
 // Function for removing all canvas cells from the current canvas.
 function removeCanvas() {
-    const sketchCols = sketchCanvas.childNodes;
-
-    for (const col of sketchCols) {
-        col.remove();
-    }
+    sketchCanvas.innerHTML = "";
 }
 
 // Event handler function for creating a canvas grid.

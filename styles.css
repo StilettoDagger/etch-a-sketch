@@ -20,14 +20,19 @@ body {
     gap: 1em;
 }
 
-.col {
-    flex-direction: column;
+#sketch-container {
+    height: 800px;
+    width: 800px;
 }
 
-.cell {
-    width: 50px;
-    height: 50px;
+.col {
+    flex-direction: column;
+    flex: 1;
+}
+
+.cell { 
     background-color: white;
+    flex:1
 }
 
 .cell.active {
