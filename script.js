@@ -32,8 +32,21 @@ function createCellHoverEffect() {
 
 	for (const cell of cells) {
 		cell.addEventListener("mouseenter", (e) => {
-			e.target.classList.remove(...colorOptions);
-			e.target.classList.add(currentColor);
+            const cellStyle = window.getComputedStyle(e.target);
+
+            const cellOpacity = cellStyle.opacity;
+            const cellColor = cell.getAttribute("data-color");
+
+            if (cell.classList.contains("active") && currentColor === cellColor)
+            {
+                cell.style.opacity = cellOpacity - 0.1;
+            }
+            else if (currentColor !== cellColor)
+            {
+                e.target.classList.remove(cellColor);
+            }
+            e.target.setAttribute("data-color", currentColor);
+			e.target.classList.add("active", currentColor);
 		});
 	}
 }
@@ -76,7 +89,9 @@ function clearCanvas(e) {
 	const cells = document.querySelectorAll(".cell");
 
 	for (const cell of cells) {
-		cell.classList.remove(...colorOptions);
+		cell.classList.remove(...colorOptions, "active");
+        cell.style.opacity = "";
+        cell.removeAttribute("data-color");
 	}
 }
 
