@@ -14,8 +14,10 @@ body, #sketch-container, .col {
 
 body {
     background-color: #f4f4f4;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1em;
 }
 
 .col {
@@ -30,4 +32,15 @@ body {
 
 .cell.active {
     background-color: black;
+}
+
+#new-grid {
+    font-size: 1.5rem;
+    padding: 0.3em 1em;
+    border: none;
+    border-radius: 20px;;
+    background-color: rgb(50, 50, 255);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
