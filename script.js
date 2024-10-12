@@ -76,6 +76,15 @@ function clearCanvas(e) {
 }
 
 document.querySelector("#new-grid").addEventListener("click", createNewCanvas);
-document.querySelector("#clear").addEventListener("click", clearCanvas)
+document.querySelector("#clear").addEventListener("click", clearCanvas);
+
+const hamburgerButton = document.querySelector(".hamburger-icon");
+
+hamburgerButton.addEventListener("click", e => {
+    const sidebarMenu = document.querySelector(".sidebar-menu");
+
+    sidebarMenu.classList.toggle("active");
+    hamburgerButton.classList.toggle("active");
+})
 
 createCanvas(16, 16);

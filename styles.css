@@ -85,6 +85,11 @@ button {
     justify-content: space-between;
     cursor: pointer;
     z-index: 2;
+    transition: left 0.5s ease-in-out;
+}
+
+.hamburger-icon.active {
+    left: calc(300px - 35px - 10px);
 }
 
 .hamburger-icon > div {
@@ -97,9 +102,14 @@ button {
     position: fixed;
     left: -300px;
     padding: 1em;
-    top: 30px;
+    padding-top: calc(30px + 50px);
+    top: 0;
     background-color: wheat;
     width: 300px;
     z-index: 1;
     transition: left 0.5s ease-in-out;
+}
+
+.sidebar-menu.active {
+    left: 0;
 }
