@@ -26,6 +26,14 @@ function createCanvas(width, height) {
 	createCellHoverEffect();
 }
 
+/**
+ * Returns a random integer between 0 and the number specified.
+ * @param {number} num 
+ */
+function random(num) {
+    return Math.floor(Math.random() * (num + 1));
+}
+
 // Change the color of the cells that are hovered on with the mouse.
 function createCellHoverEffect() {
 	const cells = document.querySelectorAll(".cell");
@@ -33,7 +41,19 @@ function createCellHoverEffect() {
 	for (const cell of cells) {
 		cell.addEventListener("mouseenter", (e) => {
 			e.target.classList.remove(...colorOptions);
-			e.target.classList.add(currentColor);
+            if (currentColor != "random")
+            {
+                e.target.classList.add(currentColor);
+            }
+            else
+            {
+                const randomColor = {
+                    r: random(255),
+                    g: random(255),
+                    b: random(255)
+                };
+                e.target.style.backgroundColor = `rgb(${randomColor.r}, ${randomColor.g}, ${randomColor.b})`;
+            }
 		});
 	}
 }
@@ -77,6 +97,7 @@ function clearCanvas(e) {
 
 	for (const cell of cells) {
 		cell.classList.remove(...colorOptions);
+        cell.style.backgroundColor = "";
 	}
 }
 
