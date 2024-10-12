@@ -114,6 +114,9 @@ button {
 
 .sidebar-menu {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
     left: -300px;
     padding: 1em;
     padding-top: calc(30px + 50px);
@@ -122,8 +125,61 @@ button {
     width: 300px;
     z-index: 1;
     transition: left 0.5s ease-in-out;
+    height: 100%;
 }
 
 .sidebar-menu.active {
     left: 0;
 }
+
+.color-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+}
+
+.color-menu > div {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.color-menu > div.active {
+    border: 5px solid gray;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.darkblue {
+    background-color: darkblue;
+}
+
