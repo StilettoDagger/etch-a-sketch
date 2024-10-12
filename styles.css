@@ -9,6 +9,12 @@ body {
 	height: 100%;
 }
 
+.title {
+    border-bottom: 2px solid gray;
+    left: 0;
+    font-size: 2.5rem;
+}
+
 body,
 #sketch-container,
 .col {
@@ -43,7 +49,7 @@ body {
 }
 
 #new-grid {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	padding: 0.3em 1em;
 	border: none;
 	border-radius: 20px;
