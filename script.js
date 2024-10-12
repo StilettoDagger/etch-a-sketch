@@ -1,4 +1,8 @@
 const sketchCanvas = document.querySelector("#sketch-container");
+const COLOR_OPTIONS = [];
+
+
+let currentColor = "black";
 
 /**
  * Create a grid of div cells based on the specified size for the width and height of the canvas.
@@ -28,7 +32,8 @@ function createCellHoverEffect() {
 
 	for (const cell of cells) {
 		cell.addEventListener("mouseenter", (e) => {
-			e.target.classList.add("active");
+            e.target.classList.remove(...COLOR_OPTIONS);
+			e.target.classList.add(currentColor);
 		});
 	}
 }
@@ -71,7 +76,7 @@ function clearCanvas(e) {
     const cells = document.querySelectorAll(".cell");
 
     for (const cell of cells) {
-       cell.classList.remove("active"); 
+       cell.classList.remove(...COLOR_OPTIONS); 
     }
 }
 
@@ -95,5 +100,18 @@ hamburgerButton.addEventListener("click", e => {
         sidebarMenu.classList.toggle("active");
     }
 })
+
+const colorButtons = document.querySelectorAll(".color-menu > div");
+
+for (const button of colorButtons) {
+    const color = button.getAttribute("data-color");
+    COLOR_OPTIONS.push(color);
+    button.addEventListener("click", e => {
+        const currentActiveColor = document.querySelector(".color-menu > div.active");
+        currentActiveColor.classList.toggle("active");
+        currentColor = e.target.getAttribute("data-color");
+        e.target.classList.toggle("active");
+    })
+}
 
 createCanvas(16, 16);
