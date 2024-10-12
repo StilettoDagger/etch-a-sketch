@@ -73,3 +73,21 @@ button {
 #clear {
     background-color: chocolate;
 }
+
+.hamburger-icon {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-icon > div {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+}
