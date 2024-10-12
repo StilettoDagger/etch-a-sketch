@@ -1,6 +1,6 @@
 const sketchCanvas = document.querySelector("#sketch-container");
-const COLOR_OPTIONS = [];
 
+const colorOptions = []; // The options are added on line 108
 
 let currentColor = "black";
 
@@ -32,7 +32,7 @@ function createCellHoverEffect() {
 
 	for (const cell of cells) {
 		cell.addEventListener("mouseenter", (e) => {
-            e.target.classList.remove(...COLOR_OPTIONS);
+			e.target.classList.remove(...colorOptions);
 			e.target.classList.add(currentColor);
 		});
 	}
@@ -73,11 +73,11 @@ function createNewCanvas(e) {
 }
 
 function clearCanvas(e) {
-    const cells = document.querySelectorAll(".cell");
+	const cells = document.querySelectorAll(".cell");
 
-    for (const cell of cells) {
-       cell.classList.remove(...COLOR_OPTIONS); 
-    }
+	for (const cell of cells) {
+		cell.classList.remove(...colorOptions);
+	}
 }
 
 document.querySelector("#new-grid").addEventListener("click", createNewCanvas);
@@ -85,33 +85,31 @@ document.querySelector("#clear").addEventListener("click", clearCanvas);
 
 const hamburgerButton = document.querySelector(".hamburger-icon");
 
-hamburgerButton.addEventListener("click", e => {
-    
-    const sidebarMenu = document.querySelector(".sidebar-menu");
+hamburgerButton.addEventListener("click", (e) => {
+	const sidebarMenu = document.querySelector(".sidebar-menu");
 
-    if (hamburgerButton.classList.contains("active"))
-    {
-        setTimeout( () => sidebarMenu.classList.toggle("active"), 100);
-        hamburgerButton.classList.toggle("active");
-    }
-
-    else {
-        setTimeout( () => hamburgerButton.classList.toggle("active"), 100);
-        sidebarMenu.classList.toggle("active");
-    }
-})
+	if (hamburgerButton.classList.contains("active")) {
+		setTimeout(() => sidebarMenu.classList.toggle("active"), 100);
+		hamburgerButton.classList.toggle("active");
+	} else {
+		setTimeout(() => hamburgerButton.classList.toggle("active"), 100);
+		sidebarMenu.classList.toggle("active");
+	}
+});
 
 const colorButtons = document.querySelectorAll(".color-menu > div");
 
 for (const button of colorButtons) {
-    const color = button.getAttribute("data-color");
-    COLOR_OPTIONS.push(color);
-    button.addEventListener("click", e => {
-        const currentActiveColor = document.querySelector(".color-menu > div.active");
-        currentActiveColor.classList.toggle("active");
-        currentColor = e.target.getAttribute("data-color");
-        e.target.classList.toggle("active");
-    })
+	const color = button.getAttribute("data-color");
+	colorOptions.push(color);
+	button.addEventListener("click", (e) => {
+		const currentActiveColor = document.querySelector(
+			".color-menu > div.active"
+		);
+		currentActiveColor.classList.toggle("active");
+		currentColor = e.target.getAttribute("data-color");
+		e.target.classList.toggle("active");
+	});
 }
 
 createCanvas(16, 16);
