@@ -67,6 +67,15 @@ function createNewCanvas(e) {
 	createCanvas(cellCount, cellCount);
 }
 
+function clearCanvas(e) {
+    const cells = document.querySelectorAll(".cell");
+
+    for (const cell of cells) {
+       cell.classList.remove("active"); 
+    }
+}
+
 document.querySelector("#new-grid").addEventListener("click", createNewCanvas);
+document.querySelector("#clear").addEventListener("click", clearCanvas)
 
 createCanvas(16, 16);
