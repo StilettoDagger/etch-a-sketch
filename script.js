@@ -44,6 +44,9 @@ function createNewCanvas(e) {
     let userInput = null;
     do {
         userInput = prompt("Please enter the number of squares per side for your new canvas (<100): ", "16");
+
+        if (userInput === null) return;
+
         if (isNaN(userInput))
         {
             alert("Please enter a valid number.");
