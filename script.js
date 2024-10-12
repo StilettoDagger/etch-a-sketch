@@ -26,6 +26,14 @@ function createCanvas(width, height) {
 	createCellHoverEffect();
 }
 
+/**
+ * Returns a random integer between 0 and the number specified.
+ * @param {number} num 
+ */
+function random(num) {
+    return Math.floor(Math.random() * (num + 1));
+}
+
 // Change the color of the cells that are hovered on with the mouse.
 function createCellHoverEffect() {
 	const cells = document.querySelectorAll(".cell");
@@ -46,7 +54,20 @@ function createCellHoverEffect() {
                 e.target.classList.remove(cellColor);
             }
             e.target.setAttribute("data-color", currentColor);
-			e.target.classList.add("active", currentColor);
+            
+            if (currentColor === "random")
+            {
+                const randomColor = {
+                    r: random(255),
+                    g: random(255),
+                    b: random(255)
+                };
+                e.target.style.backgroundColor = `rgb(${randomColor.r}, ${randomColor.g}, ${randomColor.b})`;
+            }
+            else {
+                e.target.classList.add(currentColor);
+            }
+            e.target.classList.add("active")
 		});
 	}
 }
@@ -91,6 +112,7 @@ function clearCanvas(e) {
 	for (const cell of cells) {
 		cell.classList.remove(...colorOptions, "active");
         cell.style.opacity = "";
+        cell.style.backgroundColor = "";
         cell.removeAttribute("data-color");
 	}
 }

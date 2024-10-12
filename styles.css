@@ -190,6 +190,10 @@ button {
 	background-color: darkblue;
 }
 
+.color-menu .random {
+    background: linear-gradient(red 0%, orange 25%, green 50%, blue 75%, purple 100%)
+}
+
 @media (max-width: 900px) {
     #sketch-container {
         width: 600px;
