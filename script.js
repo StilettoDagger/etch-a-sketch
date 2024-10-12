@@ -81,10 +81,19 @@ document.querySelector("#clear").addEventListener("click", clearCanvas);
 const hamburgerButton = document.querySelector(".hamburger-icon");
 
 hamburgerButton.addEventListener("click", e => {
+    
     const sidebarMenu = document.querySelector(".sidebar-menu");
 
-    sidebarMenu.classList.toggle("active");
-    hamburgerButton.classList.toggle("active");
+    if (hamburgerButton.classList.contains("active"))
+    {
+        setTimeout( () => sidebarMenu.classList.toggle("active"), 100);
+        hamburgerButton.classList.toggle("active");
+    }
+
+    else {
+        setTimeout( () => hamburgerButton.classList.toggle("active"), 100);
+        sidebarMenu.classList.toggle("active");
+    }
 })
 
 createCanvas(16, 16);
