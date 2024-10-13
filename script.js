@@ -111,8 +111,7 @@ function clearCanvas(e) {
 
 	for (const cell of cells) {
 		cell.classList.remove(...colorOptions, "active");
-        cell.style.opacity = "";
-        cell.style.backgroundColor = "";
+        cell.removeAttribute("style");
         cell.removeAttribute("data-color");
 	}
 }
