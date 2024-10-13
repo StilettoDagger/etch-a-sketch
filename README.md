@@ -23,8 +23,10 @@ A web-based drawing application inspired by the classic Etch A Sketch toy. The a
 ![Sketch preview with multiple colors](preview/preview2.png)
 <p align="center"><em>Sketch preview with multiple colors</em></p>
 
-![Sketch preview on a device with a small screen](preview/preview3.png)
-<p align="center"><em>Sketch preview on a device with a smaller screen</em></p>
+<div align="center">
+    <img src="preview/preview3.png" alt="Sketch preview on a device with a smaller screen">
+    <p><em>Sketch preview on a device with a smaller screen</em></p>
+</div>
 
 ### Credits
 
