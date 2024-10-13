@@ -2,6 +2,8 @@
 
 This repository provides the solution for the project [Etch-a-Sketch](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) from The Odin Project.
 
+You can view the app by clicking [here](https://stilettodagger.github.io/etch-a-sketch/)
+
 ## Overview
 
 A web-based drawing application inspired by the classic Etch A Sketch toy. The app allows you to create pixel art with customizable grid sizes, selecting different colors including randomly generated colors with each pixel interaction. The app is also designed responsively so that it works on many screen sizes.
